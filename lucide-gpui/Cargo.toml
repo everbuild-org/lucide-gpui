@@ -1,0 +1,11 @@
+[package]
+name = "lucide-gpui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gpui = { git = "https://github.com/zed-industries/zed" }
+
+[[example]]
+name = "simple"
+path = "examples/simple.rs"
