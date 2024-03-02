@@ -21,7 +21,7 @@ If you just want to run an example, you can do so by running the following comma
 > or `git submodule update --init --recursive` if you already cloned the repository).
 
 ```sh
-cargo run --example simple
+cargo run --example simple # or custom_sizes or custom_colors
 ```
 
 ## Usage
