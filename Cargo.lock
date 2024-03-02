@@ -2040,9 +2040,6 @@ dependencies = [
  "anyhow",
  "gpui",
  "lucide-gpui_macros",
- "resvg",
- "tiny-skia",
- "usvg",
 ]
 
 [[package]]

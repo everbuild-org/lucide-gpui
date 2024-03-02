@@ -7,7 +7,7 @@ This is a simple library to use lucide-icons in your gpui projects.
 Just add the following line to your `cargo.toml` and you are good to go.
 
 ```toml
-lucide-gpui = "0.1.0"
+lucide-gpui = { git = "https://github.com/everbuild-org/lucide-gpui.git" }
 ```
 
 ## Examples

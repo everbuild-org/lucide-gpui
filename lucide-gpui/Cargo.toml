@@ -4,13 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 publish = true
+license = "MIT AND ISC"
+keywords = ["gpui", "lucide", "gui", "icons"]
+categories = ["gui"]
+description = "A collection of Lucide icons for use with the GPUI library"
+readme = "../README.md"
+repository = "https://github.com/everbuild-org/lucide-gpui"
 
 [dependencies]
 gpui = { git = "https://github.com/zed-industries/zed" }
 anyhow = "1.0.80"
-usvg = "0.14"
-tiny-skia = "0.5"
-resvg = "0.14"
 
 lucide-gpui_macros = { path = "../lucide-gpui_macros" }
 
