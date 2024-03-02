@@ -2037,7 +2037,21 @@ dependencies = [
 name = "lucide-gpui"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "gpui",
+ "lucide-gpui_macros",
+ "resvg",
+ "tiny-skia",
+ "usvg",
+]
+
+[[package]]
+name = "lucide-gpui_macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.52",
 ]
 
 [[package]]

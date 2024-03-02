@@ -19,9 +19,28 @@ impl gpui::AssetSource for AssetSource {
     }
 }
 
-struct Simple;
+enum StarbucksIconSizes {
+    Tall,
+    Grande,
+    Venti,
+    Trenta,
+}
 
-impl Render for Simple {
+impl Into<IconSize> for StarbucksIconSizes {
+    fn into(self) -> IconSize {
+        match self {
+            StarbucksIconSizes::Tall => IconSize::Md,
+            StarbucksIconSizes::Grande => IconSize::Lg,
+            StarbucksIconSizes::Venti => IconSize::Px(50f32),
+            StarbucksIconSizes::Trenta => IconSize::Px(200f32)
+        }
+    }
+
+}
+
+struct CustomSizes;
+
+impl Render for CustomSizes {
     fn render(&mut self, _cx: &mut ViewContext<Self>) -> impl IntoElement {
         div()
             .flex()
@@ -31,18 +50,10 @@ impl Render for Simple {
             .items_center()
             .children(
                 vec![
-                    Icon::icon_anvil()
-                        .size(IconSize::Lg)
-                        .color(Hsla::red()),
-                    Icon::icon_award()
-                        .size(IconSize::Md)
-                        .color(Hsla::green()),
-                    Icon::icon_dna()
-                        .size(IconSize::Sm)
-                        .color(Hsla::blue()),
-                    Icon::icon_pie_chart()
-                        .size(IconSize::Xs)
-                        .color(Hsla::black()),
+                    Icon::icon_fish().size(StarbucksIconSizes::Tall),
+                    Icon::icon_fish().size(StarbucksIconSizes::Grande),
+                    Icon::icon_fish().size(StarbucksIconSizes::Venti),
+                    Icon::icon_fish().size(StarbucksIconSizes::Trenta),
                 ]
             )
     }
@@ -50,10 +61,10 @@ impl Render for Simple {
 
 fn main() {
     App::new()
-        .with_assets(AssetSource) // Needed
+        .with_assets(AssetSource)
         .run(|cx: &mut AppContext| {
             cx.open_window(WindowOptions::default(), |cx| {
-                cx.new_view(|_cx| Simple)
+                cx.new_view(|_cx| CustomSizes)
             });
         });
 }
