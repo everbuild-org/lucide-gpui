@@ -68,7 +68,7 @@ impl Icon {
 }
 
 impl RenderOnce for Icon {
-    fn render(self, _cx: &WindowContext) ->  impl IntoElement  {
+    fn render(self, _cx: &mut WindowContext) ->  impl IntoElement  {
         self.render_once()
     }
 }
