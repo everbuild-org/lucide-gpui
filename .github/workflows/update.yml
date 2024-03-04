@@ -18,9 +18,5 @@ jobs:
         with:
           rust-version: stable
       - run: cargo update gpui
-      - run: \
-          # Commit if there are changes
-          VERSION=$(cargo tree | grep "── gpui " | grep -Po 'zed#(.*)\)' | sed "s/)//g" | sed "s/zed//g")
-          git diff --exit-code || git commit -am "chore: Sync gpui dependency to $VERSION"
-          # Push changes
-          git push
+      - run: VERSION=$(cargo tree | grep "── gpui " | grep -Po 'zed#(.*)\)' | sed "s/)//g" | sed "s/zed//g") git diff --exit-code || git commit -am "chore: Sync gpui dependency to $VERSION" && \
+      - run: git push
