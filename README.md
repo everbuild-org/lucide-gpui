@@ -4,10 +4,14 @@ This is a simple library to use lucide-icons in your gpui projects.
 
 ## Installation
 
-Just add the following line to your `cargo.toml` and you are good to go.
+Pick one of the bot commits to use a version compatible with a certain gpui version.
+The following example uses the commit b4595e3 with text `[ci] Sync gpui dependency to zed#d7b5c883fec670539ceb40f3baa792bc1204f676`:
 
+Add this to your `Cargo.toml`:
 ```toml
-lucide-gpui = { git = "https://github.com/everbuild-org/lucide-gpui.git" }
+[dependencies]
+gpui = { git = "https://github.com/zed-industries/zed.git", rev = "d7b5c88" } # Make sure to use the correct commit
+lucide-gpui = { git = "https://github.com/everbuild-org/lucide-gpui.git", rev = "b4595e3" }
 ```
 
 ## Examples
