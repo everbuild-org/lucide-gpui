@@ -19,4 +19,5 @@ jobs:
           rust-version: stable
       - run: cargo update gpui
       - run: 'VERSION=$(cargo tree | grep "── gpui " | grep -Po "zed#(.*)\)" | sed "s/)//g" | sed "s/zed//g") git diff --exit-code || git commit -am "chore: Sync gpui dependency to $VERSION"'
+      - run: VERSION=$(cargo tree | grep "── gpui " | grep -Po "zed#(.*)\)" | sed "s/)//g" | sed "s/zed//g") cat lucide-gpui/Cargo.toml | sed 's/"https:\/\/github.com\/zed-industries\/zed", rev = ".*" }/ "https:\/\/github.com\/zed-industries\/zed", rev = "$VERSION" }/' | tee lucide-gpui/Cargo.toml
       - run: git push
