@@ -2,6 +2,8 @@
 
 This is a simple library to use lucide-icons in your gpui projects.
 
+> **Warning**: This library is currently not actively maintained because gpui doesn't really support component libraries yet.
+
 ## Installation
 
 Pick one of the bot commits to use a version compatible with a certain gpui version.

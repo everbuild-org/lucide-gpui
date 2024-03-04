@@ -1,4 +1,4 @@
-use gpui::{DefiniteLength, div, IntoElement, Length, ParentElement, RenderOnce, Styled, svg, WindowContext};
+use gpui::{DefiniteLength, div, Div, IntoElement, Length, ParentElement, RenderOnce, Styled, svg, WindowContext};
 
 pub use assets::asset_load_hook;
 use lucide_gpui_macros::lucide_init;
@@ -40,7 +40,7 @@ impl Icon {
 lucide_init!(Icon);
 
 impl Icon {
-    pub fn render_once(self) -> impl IntoElement {
+    pub fn render_once(self) -> Div {
         let el = div()
             .overflow_hidden()
             .flex()
