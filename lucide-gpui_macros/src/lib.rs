@@ -1,8 +1,8 @@
-use std::{collections::HashMap, env, path::PathBuf};
+use std::collections::HashMap;
 use include_dir::{Dir, include_dir};
 use quote::quote;
 
-const ICONS: Dir = include_dir!("lucide-gpui_macros/icons");
+const ICONS: Dir = include_dir!("icons");
 
 fn get_icons() -> HashMap<String, String> {
     let mut icons: HashMap<String, String> = HashMap::new();
