@@ -22,5 +22,6 @@ jobs:
           ZED_COMMIT=$(git -C zed rev-parse HEAD) && \
           rm -rf zed && \
           cat lucide-gpui/Cargo.toml | sed "s/rev = \".*\"/rev = \"$ZED_COMMIT\"/" | tee lucide-gpui/Cargo.toml && \
-          git commit -am '[ci] Sync gpui dependency to zed#$ZED_COMMIT' && \
+          cargo update -p lucide-gpui && \
+          git commit -am "[ci] Sync gpui dependency to zed#$ZED_COMMIT" && \
           git push
