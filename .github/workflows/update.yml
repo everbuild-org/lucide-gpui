@@ -17,7 +17,10 @@ jobs:
       - uses: ATiltedTree/setup-rust@v1
         with:
           rust-version: stable
-      - run: cargo update gpui
-      - run: 'VERSION=$(cargo tree | grep "── gpui " | grep -Po "zed#(.*)\)" | sed "s/)//g" | sed "s/zed//g") git diff --exit-code || git commit -am "chore: Sync gpui dependency to $VERSION"'
-      - run: VERSION=$(cargo tree | grep "── gpui " | grep -Po "zed#(.*)\)" | sed "s/)//g" | sed "s/zed//g") cat lucide-gpui/Cargo.toml | sed 's/"https:\/\/github.com\/zed-industries\/zed", rev = ".*" }/ "https:\/\/github.com\/zed-industries\/zed", rev = "$VERSION" }/' | tee lucide-gpui/Cargo.toml
-      - run: git push
+      - run: \
+          git clone https://github.com/zed-industries/zed.git --branch main --single-branch && \
+          ZED_COMMIT=$(git -C zed rev-parse HEAD) && \
+          rm -rf zed && \
+          cat lucide-gpui/Cargo.toml | sed "s/rev = \".*\"/rev = \"$ZED_COMMIT\"/" | tee lucide-gpui/Cargo.toml && \
+          git commit -am '[ci] Sync gpui dependency to zed#$ZED_COMMIT' && \
+          git push
