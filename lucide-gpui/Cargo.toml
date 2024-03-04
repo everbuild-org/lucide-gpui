@@ -17,6 +17,9 @@ anyhow = "1.0.80"
 
 lucide-gpui_macros = { path = "../lucide-gpui_macros" }
 
+[build-dependencies]
+git2 = "0.18"
+
 [[example]]
 name = "simple"
 path = "examples/simple.rs"
