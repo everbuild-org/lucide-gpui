@@ -39,8 +39,8 @@ impl Icon {
 
 lucide_init!(Icon);
 
-impl RenderOnce for Icon {
-    fn render(self, _cx: &mut WindowContext) -> impl IntoElement {
+impl Icon {
+    pub fn render_once(self) -> impl IntoElement {
         let el = div()
             .overflow_hidden()
             .flex()
@@ -64,5 +64,11 @@ impl RenderOnce for Icon {
             .size_full();
 
         el.child(svg.into_any_element())
+    }
+}
+
+impl RenderOnce for Icon {
+    fn render(self, _cx: &WindowContext) ->  impl IntoElement  {
+        self.render_once()
     }
 }
