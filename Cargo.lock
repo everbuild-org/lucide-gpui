@@ -2203,7 +2203,6 @@ name = "lucide-gpui"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "git2",
  "gpui",
  "lucide-gpui_macros",
 ]
@@ -2212,6 +2211,7 @@ dependencies = [
 name = "lucide-gpui_macros"
 version = "0.1.0"
 dependencies = [
+ "git2",
  "proc-macro2",
  "quote",
  "syn 2.0.52",

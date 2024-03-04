@@ -1,9 +1,26 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, env, path::PathBuf};
 use quote::quote;
+
+fn lucide_base_dir() -> PathBuf {
+    let url = "https://github.com/lucide-icons/lucide.git";
+    // check if directory exists
+    if std::path::Path::new("./lucide").exists() {
+        return env::current_dir().unwrap().join("lucide");
+    }
+
+    match git2::Repository::clone(url, "./lucide") {
+        Ok(_) => {},
+        Err(e) => panic!("failed to clone: {}", e),
+    };
+
+    env::current_dir().unwrap().join("lucide")
+}
+
 
 fn get_icons() -> HashMap<String, String> {
     let mut icons: HashMap<String, String> = HashMap::new();
-    for entry in std::fs::read_dir("./lucide-gpui/lucide/icons").unwrap() {
+    let lucide_dir = lucide_base_dir();
+    for entry in std::fs::read_dir(lucide_dir.join("icons")).unwrap() {
         let entry = entry.unwrap();
         let path = entry.path();
         let name = path.file_stem().unwrap().to_str().unwrap();
@@ -57,10 +74,11 @@ pub fn match_icons(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input = syn::parse_macro_input!(input as syn::Ident);
 
     let icons = get_icons();
+    let base_dir = lucide_base_dir();
 
     let mut arms = proc_macro2::TokenStream::new();
     for (_, path) in icons {
-        let file_path = format!("../lucide/icons/{}.svg", path);
+        let file_path = format!("{}/icons/{}.svg", base_dir.to_str().unwrap(), path);
         arms.extend(quote! {
             #path => Ok(Cow::Borrowed(include_bytes!(#file_path))),
         });
