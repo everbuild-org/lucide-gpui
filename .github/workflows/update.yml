@@ -18,8 +18,8 @@ jobs:
         with:
           rust-version: stable
       - run: \
-          apt-get update && \
-          apt-get install -y git && \
+          apt update && \
+          apt install -y git && \
           git clone https://github.com/zed-industries/zed.git --branch main --single-branch && \
           ZED_COMMIT=$(git -C zed rev-parse HEAD) && \
           rm -rf zed && \
