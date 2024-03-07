@@ -12,7 +12,7 @@ readme = "../README.md"
 repository = "https://github.com/everbuild-org/lucide-gpui"
 
 [dependencies]
-gpui = { git = "https://github.com/zed-industries/zed", rev = "01e5e4224a3630e5bbd38462f63bc5487048fbd6" }
+gpui = { git = "https://github.com/zed-industries/zed", rev = "ca37d391098f77b1a85f4d8ca3521a6ea67db969" }
 anyhow = "1.0.80"
 
 lucide-gpui_macros = { path = "../lucide-gpui_macros" }
