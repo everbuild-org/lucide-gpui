@@ -774,7 +774,7 @@ dependencies = [
 [[package]]
 name = "collections"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "rustc-hash",
 ]
@@ -1058,7 +1058,7 @@ dependencies = [
 [[package]]
 name = "derive_refineable"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1726,7 +1726,7 @@ dependencies = [
 [[package]]
 name = "gpui"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "anyhow",
  "as-raw-xcb-connection",
@@ -1805,7 +1805,7 @@ dependencies = [
 [[package]]
 name = "gpui_macros"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2308,7 +2308,7 @@ checksum = "2532096657941c2fea9c289d370a250971c689d4f143798ff67113ec042024a5"
 [[package]]
 name = "media"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "anyhow",
  "bindgen",
@@ -3198,7 +3198,7 @@ dependencies = [
 [[package]]
 name = "refineable"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "derive_refineable",
 ]
@@ -3750,7 +3750,7 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
 [[package]]
 name = "sum_tree"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "arrayvec 0.7.4",
  "log",
@@ -4307,7 +4307,7 @@ checksum = "09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9"
 [[package]]
 name = "util"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=ca37d391098f77b1a85f4d8ca3521a6ea67db969#ca37d391098f77b1a85f4d8ca3521a6ea67db969"
+source = "git+https://github.com/zed-industries/zed?rev=b50f86735fd4414096c2c8aa387ce9b787e88aa5#b50f86735fd4414096c2c8aa387ce9b787e88aa5"
 dependencies = [
  "anyhow",
  "backtrace",
@@ -4625,6 +4625,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "efc5cf48f83140dcaab716eeaea345f9e93d0018fb81162753a3f76c3397b538"
 dependencies = [
  "windows-core",
+ "windows-implement",
+ "windows-interface",
  "windows-targets 0.52.4",
 ]
 
@@ -4636,6 +4638,28 @@ checksum = "9dcc5b895a6377f1ab9fa55acedab1fd5ac0db66ad1e6c7f47e28a22e446a5dd"
 dependencies = [
  "windows-result",
  "windows-targets 0.52.4",
+]
+
+[[package]]
+name = "windows-implement"
+version = "0.53.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "942ac266be9249c84ca862f0a164a39533dc2f6f33dc98ec89c8da99b82ea0bd"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.52",
+]
+
+[[package]]
+name = "windows-interface"
+version = "0.53.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "da33557140a288fae4e1d5f8873aaf9eb6613a9cf82c3e070223ff177f598b60"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.52",
 ]
 
 [[package]]
