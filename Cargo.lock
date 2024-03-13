@@ -3,15 +3,6 @@
 version = 3
 
 [[package]]
-name = "addr2line"
-version = "0.21.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb"
-dependencies = [
- "gimli",
-]
-
-[[package]]
 name = "adler"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -387,21 +378,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
-name = "backtrace"
-version = "0.3.69"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2089b7e3f35b9dd2d0ed921ead4f6d318c27680d4a5bd167b3ee120edb105837"
-dependencies = [
- "addr2line",
- "cc",
- "cfg-if",
- "libc",
- "miniz_oxide 0.7.2",
- "object",
- "rustc-demangle",
-]
-
-[[package]]
 name = "base64"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -774,7 +750,7 @@ dependencies = [
 [[package]]
 name = "collections"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "rustc-hash",
 ]
@@ -1058,7 +1034,7 @@ dependencies = [
 [[package]]
 name = "derive_refineable"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1642,12 +1618,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gimli"
-version = "0.28.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4271d37baee1b8c7e4b708028c57d816cf9d2434acb33a549475f78c181f6253"
-
-[[package]]
 name = "git2"
 version = "0.18.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1726,7 +1696,7 @@ dependencies = [
 [[package]]
 name = "gpui"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "anyhow",
  "as-raw-xcb-connection",
@@ -1767,7 +1737,7 @@ dependencies = [
  "oo7",
  "open",
  "parking",
- "parking_lot 0.11.2",
+ "parking_lot",
  "pathfinder_geometry",
  "postage",
  "profiling",
@@ -1805,7 +1775,7 @@ dependencies = [
 [[package]]
 name = "gpui_macros"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2183,7 +2153,7 @@ checksum = "85c833ca1e66078851dba29046874e38f08b2c883700aa29a03ddd3b23814ee8"
 dependencies = [
  "bitflags 2.4.2",
  "libc",
- "redox_syscall 0.4.1",
+ "redox_syscall",
 ]
 
 [[package]]
@@ -2308,7 +2278,7 @@ checksum = "2532096657941c2fea9c289d370a250971c689d4f143798ff67113ec042024a5"
 [[package]]
 name = "media"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "anyhow",
  "bindgen",
@@ -2660,15 +2630,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "object"
-version = "0.32.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a6a622008b6e321afc04970976f62ee297fdbaa6f95318ca343e3eebb9648441"
-dependencies = [
- "memchr",
-]
-
-[[package]]
 name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2756,37 +2717,12 @@ checksum = "bb813b8af86854136c6922af0598d719255ecb2179515e6e7730d468f05c9cae"
 
 [[package]]
 name = "parking_lot"
-version = "0.11.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7d17b78036a60663b797adeaee46f5c9dfebb86948d1255007a1d6be0271ff99"
-dependencies = [
- "instant",
- "lock_api",
- "parking_lot_core 0.8.6",
-]
-
-[[package]]
-name = "parking_lot"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3742b2c103b9f06bc9fff0a37ff4912935851bee6d36f3c02bcc755bcfec228f"
 dependencies = [
  "lock_api",
- "parking_lot_core 0.9.9",
-]
-
-[[package]]
-name = "parking_lot_core"
-version = "0.8.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "60a2cfe6f0ad2bfc16aefa463b497d5c7a5ecd44a23efa72aa342d90177356dc"
-dependencies = [
- "cfg-if",
- "instant",
- "libc",
- "redox_syscall 0.2.16",
- "smallvec",
- "winapi",
+ "parking_lot_core",
 ]
 
 [[package]]
@@ -2797,7 +2733,7 @@ checksum = "4c42a9226546d68acdd9c0a280d17ce19bfe27a46bf68784e4066115788d008e"
 dependencies = [
  "cfg-if",
  "libc",
- "redox_syscall 0.4.1",
+ "redox_syscall",
  "smallvec",
  "windows-targets 0.48.5",
 ]
@@ -2968,7 +2904,7 @@ dependencies = [
  "crossbeam-queue",
  "futures",
  "log",
- "parking_lot 0.12.1",
+ "parking_lot",
  "pin-project",
  "pollster",
  "static_assertions",
@@ -3168,15 +3104,6 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
-version = "0.2.16"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb5a58c1855b4b6819d59012155603f0b22ad30cad752600aadfcb695265519a"
-dependencies = [
- "bitflags 1.3.2",
-]
-
-[[package]]
-name = "redox_syscall"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4722d768eff46b75989dd134e5c353f0d6296e5aaa3132e776cbdb56be7731aa"
@@ -3198,7 +3125,7 @@ dependencies = [
 [[package]]
 name = "refineable"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "derive_refineable",
 ]
@@ -3306,12 +3233,6 @@ dependencies = [
  "sha2",
  "walkdir",
 ]
-
-[[package]]
-name = "rustc-demangle"
-version = "0.1.23"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d626bb9dae77e28219937af045c257c28bfd3f69333c512553507f5f9798cb76"
 
 [[package]]
 name = "rustc-hash"
@@ -3750,7 +3671,7 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
 [[package]]
 name = "sum_tree"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "arrayvec 0.7.4",
  "log",
@@ -4307,24 +4228,23 @@ checksum = "09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9"
 [[package]]
 name = "util"
 version = "0.1.0"
-source = "git+https://github.com/zed-industries/zed?rev=14a0d8039b9d666ca4f989fc835bc1789b6e3e75#14a0d8039b9d666ca4f989fc835bc1789b6e3e75"
+source = "git+https://github.com/zed-industries/zed?rev=aeb2a9805881209ec966e19905ae1610b0a5ba66#aeb2a9805881209ec966e19905ae1610b0a5ba66"
 dependencies = [
  "anyhow",
- "backtrace",
+ "async-fs 1.6.0",
  "collections",
  "dirs",
  "futures",
+ "futures-lite 1.13.0",
  "globset",
  "isahc",
  "lazy_static",
  "log",
- "parking_lot 0.11.2",
  "rand",
  "regex",
  "rust-embed",
  "serde",
  "serde_json",
- "smol",
  "take-until",
  "tendril",
  "unicase",
